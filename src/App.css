@@ -13,6 +13,11 @@
   }
 }
 
+.customFont{
+  font-family: 'PoppinsMedium';
+  font-size: 5vmax;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
