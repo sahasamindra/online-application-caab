@@ -17,7 +17,11 @@ code {
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+.border-cl {
+  border: 1px solid red;
 }
 
 @font-face {

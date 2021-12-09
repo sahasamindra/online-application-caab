@@ -1,0 +1,19 @@
+.col-bg {
+  background-image: url("../assets/images/background.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100vmin;
+}
+
+@media screen and (max-width: 767px) {
+  .col-bg {
+    background-image: none;
+  }
+}
+
+@media screen and (max-width: 955px) {
+  .col-bg {
+    background-size: cover;
+  }
+}

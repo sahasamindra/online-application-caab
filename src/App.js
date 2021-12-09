@@ -1,6 +1,9 @@
 // import logo from './logo.svg';
 // import './App.css';
 
+import Background from "./components/Background";
+import Registration from "./components/Registration";
+
 function App() {
   return (
     <div>
@@ -10,6 +13,9 @@ function App() {
           Testing P tag Edit and save to reload.
         </p>
       </header> */}
+      <Background>
+        <Registration />
+      </Background>
     </div>
   );
 }
