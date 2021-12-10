@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "./registration.css";
 import StepWrapper from "./StepProgress/StepWrapper";
+import { CountryCode } from "./CountryCode/CountryCode";
 
 function Registration() {
   const [mobile, setMobile] = useState();
@@ -40,11 +41,11 @@ function Registration() {
           <Row>
             <Col md={4}>
               <Form.Select>
-                {/* {CountryCode.map((country) => (
-                  <option key={country.flag}>
-                    {`${country.flag} ${country.dial_code}`}
+                {CountryCode.map((country, index) => (
+                  <option key={index}>
+                    {`${country.code} ${country.dial_code}`}
                   </option>
-                ))} */}
+                ))}
               </Form.Select>
             </Col>
             <Col md={8}>
