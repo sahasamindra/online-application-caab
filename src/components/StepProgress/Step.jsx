@@ -8,7 +8,7 @@ function Step(props) {
   return (
     <div className="step-block">
       <div className="circle-wrapper">
-        {renderClass == "success" ? (
+        {renderClass === "success" ? (
           <div className="success-step-wrapper">
             <div className="success-step"></div>
           </div>

@@ -1,5 +1,10 @@
 export const CountryCode = [
   {
+    name: "Bangladesh",
+    code: "BD",
+    dial_code: "+880",
+  },
+  {
     name: "Afghanistan",
     code: "AF",
     dial_code: "+93",
@@ -88,11 +93,6 @@ export const CountryCode = [
     name: "Bahrain",
     code: "BH",
     dial_code: "+973",
-  },
-  {
-    name: "Bangladesh",
-    code: "BD",
-    dial_code: "+880",
   },
   {
     name: "Barbados",
@@ -344,11 +344,11 @@ export const CountryCode = [
     code: "ET",
     dial_code: "+251",
   },
-  {
-    name: "Falkland Islands (Malvinas)",
-    code: "FK",
-    dial_code: "+500",
-  },
+  // {
+  //   name: "Falkland Islands (Malvinas)",
+  //   code: "FK",
+  //   dial_code: "+500",
+  // },
   {
     name: "Faroe Islands",
     code: "FO",
