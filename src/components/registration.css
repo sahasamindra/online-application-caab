@@ -28,23 +28,36 @@
 }
 
 .page-title {
-  font-family: "PoppinsMedium";
+  font-family: "PoppinsSemiBold";
   color: #0979f9;
   font-size: 1.5rem;
-  font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
 .page-subtitle {
-  font-family: "PoppinsMedium";
+  font-family: "PoppinsSemiBold";
   font-size: 1rem;
-  font-weight: 600;
+}
+
+.form-text {
+  font-family: "PoppinsSemiBold";
 }
 
 .text-sm {
   font-size: 0.7rem;
   margin-top: 0.25rem;
   margin-bottom: 0;
+}
+
+.text-md {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.text-md-underline {
+  text-decoration: underline;
+  color: #0979f9;
 }
 
 /* .a-tag {
