@@ -17,11 +17,20 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 // import { faCheck } from "@fortawesome/free-solid-svg-icons";
 // import flagImage from "../assets/flags/bd.svg";
 
-function Registration() {
-  const [pageTitle, setPageTitle] = useState("Sign Up");
-  const [pageSubTitle, setPageSubTitle] = useState("Registration Page");
+import { formFillUp } from "../redux/actions";
 
-  const [activeForm, setaActiveForm] = useState("form1");
+import { useDispatch, useSelector } from "react-redux";
+
+function Registration() {
+  const myCurrentStates = useSelector((state) => state.changeFormReducer);
+  const dispatch = useDispatch();
+
+  const [pageTitle, setPageTitle] = useState(myCurrentStates.pageTitle);
+  const [pageSubTitle, setPageSubTitle] = useState(
+    myCurrentStates.pageSubTitle
+  );
+  const [activeForm, setaActiveForm] = useState(myCurrentStates.activeForm);
+
   const [eyeClose, setEyeClose] = useState(true);
   const [eyeReClose, setEyeReClose] = useState(true);
 
@@ -47,13 +56,13 @@ function Registration() {
   const handleFormSubmit = (nextForm) => {
     setaActiveForm(nextForm);
     if (nextForm === "form2") {
-      console.log(activeForm);
-      console.log(name);
-      console.log(email);
-      console.log(mobile);
-      console.log(password);
-      console.log(rePassword);
-      console.log(termAgreement);
+      // console.log(activeForm);
+      // console.log(name);
+      // console.log(email);
+      // console.log(mobile);
+      // console.log(password);
+      // console.log(rePassword);
+      // console.log(termAgreement);
 
       setPageTitle("OTP Verification");
       setPageSubTitle("A 6 Digit Verification Code Has Been Sent");
@@ -85,6 +94,23 @@ function Registration() {
           onSubmit={(e) => {
             e.preventDefault();
             handleFormSubmit("form2");
+            dispatch(
+              formFillUp({
+                pageTitle: "OTP Verification",
+                pageSubTitle: "A 6 Digit Verification Code Has Been Sent",
+                activeForm: "form2",
+                formData: {
+                  selectedFlag,
+                  selectedCountryCode,
+                  name,
+                  email,
+                  mobile,
+                  password,
+                  rePassword,
+                  termAgreement,
+                },
+              })
+            );
           }}
         >
           <Form.Group className="mb-2" controlId="formBasicName">
