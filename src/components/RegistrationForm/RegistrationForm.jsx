@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "react-bootstrap/Image";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
@@ -6,7 +6,10 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import { CountryCode } from "./CountryCode/CountryCode";
+import { CountryCode } from "../CountryCode/CountryCode";
+
+import { useDispatch } from "react-redux";
+import { formFillUp } from "../../redux/actions";
 
 //Font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +17,8 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 function RegistrationForm() {
+  const dispatch = useDispatch();
+
   //Form-1 Values
   const [selectedFlag, setSelectedFlag] = useState("bd");
   const [selectedCountryCode, setSelectedCountryCode] = useState("+880");
@@ -31,6 +36,9 @@ function RegistrationForm() {
   };
 
   //Font awesome initialization
+  const [eyeClose, setEyeClose] = useState(true);
+  const [eyeReClose, setEyeReClose] = useState(true);
+
   const eye = <FontAwesomeIcon icon={faEye} style={{ color: "#0979F9" }} />;
   const eyeSlash = (
     <FontAwesomeIcon icon={faEyeSlash} style={{ color: "#0979F9" }} />
@@ -41,7 +49,23 @@ function RegistrationForm() {
       <Form
         onSubmit={(e) => {
           e.preventDefault();
-          handleFormSubmit("form2");
+          dispatch(
+            formFillUp({
+              pageTitle: "OTP Verification",
+              pageSubTitle: "A 6 Digit Verification Code Has Been Sent",
+              activeForm: "form2",
+              formData: {
+                selectedFlag,
+                selectedCountryCode,
+                name,
+                email,
+                mobile,
+                password,
+                rePassword,
+                termAgreement,
+              },
+            })
+          );
         }}
       >
         <Form.Group className="mb-2" controlId="formBasicName">
@@ -53,7 +77,6 @@ function RegistrationForm() {
             placeholder="Please Enter Name Here"
             onChange={(e) => setName(e.target.value)}
             required
-            value={name}
           />
         </Form.Group>
 
@@ -66,7 +89,6 @@ function RegistrationForm() {
             placeholder="Enter Email Here"
             onChange={(e) => setEmail(e.target.value)}
             required
-            value={email}
           />
         </Form.Group>
 
@@ -101,7 +123,6 @@ function RegistrationForm() {
                 placeholder={`${selectedCountryCode} XXXX-XXXXXX`}
                 onChange={(e) => setMobile(e.target.value)}
                 required
-                value={mobile}
               />
             </Col>
           </Row>
@@ -117,7 +138,6 @@ function RegistrationForm() {
               placeholder="Enter Password Here"
               onChange={(e) => setPassword(e.target.value)}
               required
-              value={password}
             />
             <InputGroup.Text
               id="basic-addon1"
@@ -143,7 +163,6 @@ function RegistrationForm() {
               placeholder="Enter Re-Password Here"
               onChange={(e) => setRePassword(e.target.value)}
               required
-              value={rePassword}
             />
             <InputGroup.Text
               id="basic-addon1"
@@ -161,7 +180,6 @@ function RegistrationForm() {
             label="Creating An Account You Agree With Our"
             onChange={(e) => setTermAgreement(e.target.checked)}
             required
-            value={termAgreement}
           />
           <a className="a-tag" href="termsAndConditions">
             Terms &amp; Conditions

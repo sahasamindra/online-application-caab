@@ -10,7 +10,6 @@ const changeFormReducer = (state = initialState, action) => {
     case "FORM_FILL_UP":
       const { activeForm, pageTitle, pageSubTitle, formData } = action.payload;
       return {
-        ...state,
         activeForm,
         pageTitle,
         pageSubTitle,

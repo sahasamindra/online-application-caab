@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 105vh;
+  /* height: 105vmax; */
 }
 
 @media screen and (max-width: 767px) {
