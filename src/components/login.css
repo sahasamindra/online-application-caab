@@ -1,0 +1,61 @@
+.card-layout {
+  width: 30vmax;
+  min-width: 350px;
+  /* margin-left: auto;
+    margin-right: 10vmax;
+    margin-top: 5vh; */
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  /* margin-left: 40vmin;
+    margin-top: 10vmin; */
+}
+
+@media screen and (max-width: 767px) {
+  .card-layout {
+    /* width: 50vmax; */
+    min-width: 300px;
+    margin: 5vh auto;
+
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+  }
+}
+
+.page-title {
+  font-family: "PoppinsSemiBold";
+  color: #0979f9;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+  font-family: "PoppinsSemiBold";
+  font-size: 1rem;
+}
+
+.form-text {
+  font-family: "PoppinsSemiBold";
+}
+
+.text-sm {
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.text-md {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.text-md-underline {
+  text-decoration: underline;
+  color: #0979f9;
+}

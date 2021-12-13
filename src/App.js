@@ -1,8 +1,10 @@
 // import logo from './logo.svg';
 // import './App.css';
 
-import Background from "./components/Background/Background";
+// import Background from "./components/Background/Background";
 import Registration from "./components/Registration";
+import Login from "./components/Login";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -14,9 +16,15 @@ function App() {
         </p>
       </header> */}
 
-      <Background>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
+        {/* <Route path="/forgot" element={<Forgot />} /> */}
+      </Routes>
+
+      {/* <Background>
         <Registration />
-      </Background>
+      </Background> */}
     </div>
   );
 }
