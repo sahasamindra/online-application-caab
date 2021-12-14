@@ -18,8 +18,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Registration />} />
-        {/* <Route path="/forgot" element={<Forgot />} /> */}
+        <Route path="/registration" element={<Registration />} />
       </Routes>
 
       {/* <Background>

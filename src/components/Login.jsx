@@ -5,12 +5,15 @@ import FormControl from "react-bootstrap/FormControl";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Logo from "../assets/images/caabLogo.png";
+import "./login.css";
 
 //Font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Background from "./Background/Background";
+import { Link } from "react-router-dom";
 
 function Login() {
   //Login form values
@@ -25,15 +28,20 @@ function Login() {
     <FontAwesomeIcon icon={faEyeSlash} style={{ color: "#0979F9" }} />
   );
   const [eyeClose, setEyeClose] = useState(true);
-  const toggleRadio = () => {
+
+  const toggleRadio = (e) => {
+    console.log(e);
+
     setRadioToggle(!radioToggle);
+    e.target.checked = radioToggle;
   };
 
   return (
     <Background>
       <div className="card-layout">
+        <img src={Logo} alt="Main Logo" className="logo" />
         <div className="page-title">Welcome</div>
-        <div className="page-subtitle">Please Login To Continue</div>
+        <div className="page-subtitle mb-3">Please Login To Continue</div>
 
         <Form
           onSubmit={(e) => {
@@ -43,40 +51,40 @@ function Login() {
             console.log(password);
           }}
         >
-          <Row>
-            <Col>
-              <Form.Group className="mb-3">
-                <Form.Label className="label-header">
-                  Email or Mobiles<span className="text-danger">*</span>{" "}
-                </Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Please Enter Here"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Label className="label-header">
-                  Password<span className="text-danger">*</span>{" "}
-                </Form.Label>
-                <InputGroup>
-                  <FormControl
-                    type={!eyeClose ? "text" : "password"}
-                    placeholder="Enter Password Here"
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                  <InputGroup.Text
-                    id="basic-addon1"
-                    onClick={() => setEyeClose(!eyeClose)}
-                  >
-                    {eyeClose ? eyeSlash : eye}
-                  </InputGroup.Text>
-                </InputGroup>
-              </Form.Group>
-            </Col>
-          </Row>
-          <Row className="mb-3">
+          {/* <Row>
+            <Col> */}
+          <Form.Group className="mb-2">
+            <Form.Label className="fw-bold">
+              Email or Mobiles<span className="text-danger">*</span>{" "}
+            </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Please Enter Here"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-2">
+            <Form.Label className="fw-bold">
+              Password<span className="text-danger">*</span>{" "}
+            </Form.Label>
+            <InputGroup>
+              <FormControl
+                type={!eyeClose ? "text" : "password"}
+                placeholder="Enter Password Here"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <InputGroup.Text
+                id="basic-addon1"
+                onClick={() => setEyeClose(!eyeClose)}
+              >
+                {eyeClose ? eyeSlash : eye}
+              </InputGroup.Text>
+            </InputGroup>
+          </Form.Group>
+          {/* </Col>
+          </Row> */}
+          <Row className="mb-2">
             <Col md={6} className="d-flex">
               <Form.Check type="radio" onClick={toggleRadio} />
               <Form.Check.Label className="custom_margin_left">
@@ -92,12 +100,12 @@ function Login() {
                   onChange={onChange}
                 /> */}
           <div className="d-flex justify-content-between mt-3">
-            <Button variant="primary" className="custom-button">
+            <Button variant="primary" className="custom-button" type="submit">
               Login
             </Button>
-            <a href="/register" className="btn btn-primary custom-button">
+            <Link to="/register" className="btn btn-primary custom-button">
               Sign Up
-            </a>
+            </Link>
           </div>
         </Form>
       </div>
