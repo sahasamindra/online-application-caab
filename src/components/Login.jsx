@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 function Login() {
   //Login form values
-  const [radioToggle, setRadioToggle] = useState(false);
+  const [radioToggle, setRadioToggle] = useState(true);
   const [email, setEmail] = useState("");
   // const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
@@ -30,10 +30,9 @@ function Login() {
   const [eyeClose, setEyeClose] = useState(true);
 
   const toggleRadio = (e) => {
-    console.log(e);
-
     setRadioToggle(!radioToggle);
     e.target.checked = radioToggle;
+    // console.log(radioToggle);
   };
 
   return (
@@ -46,7 +45,7 @@ function Login() {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(radioToggle);
+            console.log(!radioToggle);
             console.log(email);
             console.log(password);
           }}
@@ -84,12 +83,14 @@ function Login() {
           </Form.Group>
           {/* </Col>
           </Row> */}
-          <Row className="mb-2">
+          <Row className="mb-2 mt-3">
             <Col md={6} className="d-flex">
-              <Form.Check type="radio" onClick={toggleRadio} />
-              <Form.Check.Label className="custom_margin_left">
-                Remember Me{" "}
-              </Form.Check.Label>
+              <Form.Check
+                type="radio"
+                onClick={toggleRadio}
+                // value={radioToggle}
+              />
+              <Form.Check.Label className="ms-1">Remember Me </Form.Check.Label>
             </Col>
             <Col md={6} className="text-end">
               <a href="/forgot">Forget Password ?</a>
@@ -99,14 +100,25 @@ function Login() {
                   sitekey="6LejDGcdAAAAAP088vmTvYB_sAM7LB8vDZyHfBjS"
                   onChange={onChange}
                 /> */}
-          <div className="d-flex justify-content-between mt-3">
-            <Button variant="primary" className="custom-button" type="submit">
-              Login
-            </Button>
-            <Link to="/register" className="btn btn-primary custom-button">
-              Sign Up
-            </Link>
-          </div>
+          {/* <div className="d-flex justify-content-between mt-3"> */}
+          <Row>
+            <Col md={6}>
+              <Button
+                variant="primary"
+                className="btn btn-block btn-lg"
+                type="submit"
+              >
+                Login
+              </Button>
+            </Col>
+            <Col md={6}>
+              <Link to="/register" className="btn btn-block btn-lg">
+                Sign Up
+              </Link>
+            </Col>
+          </Row>
+
+          {/* </div> */}
         </Form>
       </div>
     </Background>
