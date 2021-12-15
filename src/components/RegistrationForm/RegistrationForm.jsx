@@ -49,6 +49,7 @@ function RegistrationForm() {
       <Form
         onSubmit={(e) => {
           e.preventDefault();
+          console.log("Implement registration logic");
           dispatch(
             formFillUp({
               pageTitle: "OTP Verification",
@@ -99,15 +100,15 @@ function RegistrationForm() {
           {/* <Form.Control type="tel" placeholder="Enter Mobile Here" /> */}
 
           <Row>
-            <Col xxl={2} xl={2} lg={2} md={2} sm={6} xs={6}>
+            <Col xxl={2} xl={2} lg={2} md={2} sm={3} xs={3}>
               <Image
-                className="form-text"
+                className="form-text flag"
                 src={`assets/flags/${selectedFlag}.svg`}
                 fluid
               />
             </Col>
 
-            <Col xxl={4} xl={4} lg={4} md={4} sm={6} xs={6}>
+            <Col>
               <Form.Select onChange={(e) => handleSelection(e.target.value)}>
                 {CountryCode.map((country, index) => (
                   <option key={index}>

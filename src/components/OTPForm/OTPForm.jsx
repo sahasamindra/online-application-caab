@@ -24,6 +24,7 @@ function OTPForm() {
       <Form
         onSubmit={(e) => {
           e.preventDefault();
+          console.log("Implement OTP verification logics");
           dispatch(
             formFillUp({
               pageTitle: "Success",

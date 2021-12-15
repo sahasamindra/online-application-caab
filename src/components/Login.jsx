@@ -47,6 +47,7 @@ function Login() {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
+            console.log("Implement login logic");
             console.log(email);
             console.log(password);
             console.log(!radioToggle);

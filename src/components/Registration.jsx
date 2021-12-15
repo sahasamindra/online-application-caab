@@ -8,8 +8,11 @@ import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import OTPForm from "./OTPForm/OTPForm";
 import { useSelector } from "react-redux";
 import Background from "./Background/Background";
+import { useNavigate } from "react-router-dom";
 
 function Registration() {
+  const navigate = useNavigate();
+
   const myCurrentStates = useSelector((state) => state.changeFormReducer);
   const { pageTitle } = myCurrentStates;
   const { pageSubTitle } = myCurrentStates;
@@ -35,7 +38,7 @@ function Registration() {
               className="col-12 fw-bold mt-3"
               variant="primary"
               type="button"
-              onClick={() => console.log("Implement Login Logic")}
+              onClick={() => navigate("/")}
             >
               Login
             </Button>

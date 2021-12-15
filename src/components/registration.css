@@ -43,6 +43,11 @@
   font-family: "PoppinsSemiBold";
 }
 
+.flag {
+  width: 3rem;
+  height: auto;
+}
+
 .text-sm {
   font-size: 0.7rem;
   margin-top: 0.25rem;
