@@ -1,19 +1,18 @@
 import React from "react";
-import "./registration.css";
-
-import Button from "react-bootstrap/Button";
-import StepWrapper from "./StepProgress/StepWrapper";
-
-import RegistrationForm from "./RegistrationForm/RegistrationForm";
-import OTPForm from "./OTPForm/OTPForm";
-import { useSelector } from "react-redux";
 import Background from "./Background/Background";
+import StepWrapper from "./StepProgress/StepWrapper";
+import Button from "react-bootstrap/Button";
+import { useSelector } from "react-redux";
+import "./forgetPassword.css";
+import ResetPasswordForm1 from "./ResetPasswordForm/ResetPasswordForm1";
+import ResetPasswordForm2 from "./ResetPasswordForm/ResetPasswordForm2";
+import OTPForm from "./OTPForm/OTPForm";
 import { useNavigate } from "react-router-dom";
 
-function Registration() {
+function ForgetPassword() {
+  const myCurrentStates = useSelector((state) => state.resetPasswordReducer);
   const navigate = useNavigate();
 
-  const myCurrentStates = useSelector((state) => state.changeFormReducer);
   const { pageTitle } = myCurrentStates;
   const { pageSubTitle } = myCurrentStates;
   const { activeForm } = myCurrentStates;
@@ -26,13 +25,13 @@ function Registration() {
         <div className="step-container">
           <StepWrapper activeForm={activeForm} />
         </div>
-
-        {activeForm === "form1" ? <RegistrationForm /> : null}
-        {activeForm === "form2" ? <OTPForm for="registration" /> : null}
+        {activeForm === "form1" ? <ResetPasswordForm1 /> : null}
+        {activeForm === "form2" ? <OTPForm for="resetPassword" /> : null}
+        {activeForm === "form3" ? <ResetPasswordForm2 /> : null}
         {activeForm === "form4" ? (
           <>
             <p className="text-md fw-bold">
-              Your Account Has Been Created Successfully
+              Your Password Reset Has Been Successful
             </p>
             <Button
               className="col-12 fw-bold mt-3"
@@ -49,4 +48,4 @@ function Registration() {
   );
 }
 
-export default Registration;
+export default ForgetPassword;

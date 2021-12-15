@@ -69,7 +69,7 @@ function RegistrationForm() {
           );
         }}
       >
-        <Form.Group className="mb-2" controlId="formBasicName">
+        <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label className="fw-bold">
             Name<span className="text-danger">*</span>
           </Form.Label>
@@ -81,7 +81,7 @@ function RegistrationForm() {
           />
         </Form.Group>
 
-        <Form.Group className="mb-2" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label className="fw-bold">
             Email address<span className="text-danger">*</span>
           </Form.Label>
@@ -93,7 +93,7 @@ function RegistrationForm() {
           />
         </Form.Group>
 
-        <Form.Group className="mb-2">
+        <Form.Group className="mb-3">
           <Form.Label className="fw-bold">
             Mobile Number<span className="text-danger">*</span>
           </Form.Label>
@@ -129,7 +129,7 @@ function RegistrationForm() {
           </Row>
         </Form.Group>
 
-        <Form.Group className="mb-2" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label className="fw-bold">
             Password<span className="text-danger">*</span>
           </Form.Label>
@@ -154,7 +154,7 @@ function RegistrationForm() {
           </p>
         </Form.Group>
 
-        <Form.Group className="mb-2" controlId="formBasicRePassword">
+        <Form.Group className="mb-3" controlId="formBasicRePassword">
           <Form.Label className="fw-bold">
             Re-Password<span className="text-danger">*</span>
           </Form.Label>
@@ -175,14 +175,14 @@ function RegistrationForm() {
           {/* <Form.Control type="password" placeholder="Enter Re-Password Here" /> */}
         </Form.Group>
 
-        <Form.Group className="mb-2" controlId="formBasicCheckbox">
+        <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
             type="checkbox"
             label="Creating An Account You Agree With Our"
             onChange={(e) => setTermAgreement(e.target.checked)}
             required
           />
-          <a className="a-tag" href="termsAndConditions">
+          <a className="a-tag" href="/termsAndConditions">
             Terms &amp; Conditions
           </a>
         </Form.Group>

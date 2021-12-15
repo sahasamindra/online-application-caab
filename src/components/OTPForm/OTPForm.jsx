@@ -4,9 +4,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useDispatch } from "react-redux";
-import { formFillUp } from "../../redux/actions";
+import { formFillUp, resetFormFillUp } from "../../redux/actions";
 
-function OTPForm() {
+function OTPForm(props) {
   const dispatch = useDispatch();
   const [counter, setCounter] = useState(90);
 
@@ -26,14 +26,23 @@ function OTPForm() {
           e.preventDefault();
           console.log("Implement OTP verification logics");
           dispatch(
-            formFillUp({
-              pageTitle: "Success",
-              pageSubTitle: "Awesome",
-              activeForm: "form4",
-              formData: {
-                OTP,
-              },
-            })
+            props.for === "registration"
+              ? formFillUp({
+                  pageTitle: "Success",
+                  pageSubTitle: "Awesome",
+                  activeForm: "form4",
+                  formData: {
+                    OTP,
+                  },
+                })
+              : resetFormFillUp({
+                  pageTitle: "Reset New Password",
+                  pageSubTitle: "Account Verification Successful",
+                  activeForm: "form3",
+                  formData: {
+                    OTP,
+                  },
+                })
           );
         }}
       >

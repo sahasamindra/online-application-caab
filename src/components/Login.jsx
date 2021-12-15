@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Logo from "../assets/images/caabLogo.png";
 import "./login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //Font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -55,7 +55,7 @@ function Login() {
         >
           {/* <Row>
             <Col> */}
-          <Form.Group className="mb-2">
+          <Form.Group className="mb-3">
             <Form.Label className="fw-bold">
               Email or Mobiles<span className="text-danger">*</span>{" "}
             </Form.Label>
@@ -63,9 +63,10 @@ function Login() {
               type="text"
               placeholder="Please Enter Here"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </Form.Group>
-          <Form.Group className="mb-2">
+          <Form.Group className="mb-3">
             <Form.Label className="fw-bold">
               Password<span className="text-danger">*</span>{" "}
             </Form.Label>
@@ -86,7 +87,7 @@ function Login() {
           </Form.Group>
           {/* </Col>
           </Row> */}
-          <Row className="mb-2 mt-3">
+          <Row className="mb-3 mt-3">
             <Col md={6} className="d-flex">
               <Form.Check
                 type="radio"
@@ -96,7 +97,7 @@ function Login() {
               <Form.Check.Label className="ms-1">Remember Me </Form.Check.Label>
             </Col>
             <Col md={6} className="text-end">
-              <a href="/forgetPassword">Forget Password ?</a>
+              <Link to="/forgetPassword">Forget Password ?</Link>
             </Col>
           </Row>
           {/* <ReCAPTCHA

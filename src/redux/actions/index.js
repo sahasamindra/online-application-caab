@@ -4,3 +4,10 @@ export const formFillUp = (activeFormData) => {
     payload: activeFormData,
   };
 };
+
+export const resetFormFillUp = (activeFormData) => {
+  return {
+    type: "RESET_FORM_FILL_UP",
+    payload: activeFormData,
+  };
+};
