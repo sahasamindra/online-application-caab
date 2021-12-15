@@ -7,15 +7,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Logo from "../assets/images/caabLogo.png";
 import "./login.css";
+import { useNavigate } from "react-router-dom";
 
 //Font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Background from "./Background/Background";
-import { Link } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
   //Login form values
   const [radioToggle, setRadioToggle] = useState(true);
   const [email, setEmail] = useState("");
@@ -23,11 +25,11 @@ function Login() {
   const [password, setPassword] = useState("");
 
   //Font awesome initialization
+  const [eyeClose, setEyeClose] = useState(true);
   const eye = <FontAwesomeIcon icon={faEye} style={{ color: "#0979F9" }} />;
   const eyeSlash = (
     <FontAwesomeIcon icon={faEyeSlash} style={{ color: "#0979F9" }} />
   );
-  const [eyeClose, setEyeClose] = useState(true);
 
   const toggleRadio = (e) => {
     setRadioToggle(!radioToggle);
@@ -45,9 +47,9 @@ function Login() {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log(!radioToggle);
             console.log(email);
             console.log(password);
+            console.log(!radioToggle);
           }}
         >
           {/* <Row>
@@ -93,7 +95,7 @@ function Login() {
               <Form.Check.Label className="ms-1">Remember Me </Form.Check.Label>
             </Col>
             <Col md={6} className="text-end">
-              <a href="/forgot">Forget Password ?</a>
+              <a href="/forgetPassword">Forget Password ?</a>
             </Col>
           </Row>
           {/* <ReCAPTCHA
@@ -102,19 +104,24 @@ function Login() {
                 /> */}
           {/* <div className="d-flex justify-content-between mt-3"> */}
           <Row>
-            <Col md={6}>
+            <Col>
               <Button
+                className="col-12 mt-2 fw-bold"
                 variant="primary"
-                className="btn btn-block btn-lg"
                 type="submit"
               >
                 Login
               </Button>
             </Col>
-            <Col md={6}>
-              <Link to="/register" className="btn btn-block btn-lg">
+            <Col>
+              <Button
+                className="col-12 mt-2 fw-bold"
+                variant="primary"
+                type="button"
+                onClick={() => navigate("/registration")}
+              >
                 Sign Up
-              </Link>
+              </Button>
             </Col>
           </Row>
 
