@@ -51,6 +51,7 @@ function Login() {
             console.log(email);
             console.log(password);
             console.log(!radioToggle);
+            navigate("/dashboard");
           }}
         >
           {/* <Row>
@@ -63,7 +64,7 @@ function Login() {
               type="text"
               placeholder="Please Enter Here"
               onChange={(e) => setEmail(e.target.value)}
-              required
+              // required
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -75,7 +76,7 @@ function Login() {
                 type={!eyeClose ? "text" : "password"}
                 placeholder="Enter Password Here"
                 onChange={(e) => setPassword(e.target.value)}
-                required
+                // required
               />
               <InputGroup.Text
                 id="basic-addon1"

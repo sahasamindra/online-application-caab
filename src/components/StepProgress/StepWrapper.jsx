@@ -3,7 +3,7 @@ import Step from "./Step";
 import "./stepWrapper.css";
 
 function StepWrapper(props) {
-  const { activeForm } = props; //form1 success
+  const { activeForm } = props; //form1=> success
   const steps = ["1", "2", "3"];
 
   return (

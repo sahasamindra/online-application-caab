@@ -1,0 +1,43 @@
+.navbar-bg {
+  background-color: #fff;
+  box-shadow: 6px 6px 10px #eff6fe;
+  padding: 0 4vw;
+  height: 8vh;
+  /* height: 60px; */
+  min-height: 60px;
+  font-family: "PoppinsSemiBold";
+}
+
+.logo {
+  width: 6vh;
+  min-width: 50px;
+  height: auto;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.navbar-light .navbar-brand {
+  color: #010247 !important;
+  font-size: 1em;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #000 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000 !important;
+}
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+.dropdown-menu {
+  box-shadow: 8px 8px 40px rgba(0, 0, 0, 0.16);
+  border: none !important;
+  border-radius: 10px !important;
+  top: 7.5vh !important;
+  left: 50px !important;
+}

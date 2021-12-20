@@ -6,6 +6,7 @@ import Registration from "./components/Registration";
 import Login from "./components/Login";
 import { Routes, Route } from "react-router-dom";
 import ForgetPassword from "./components/ForgetPassword";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/forgetPassword" element={<ForgetPassword />} />
+        <Route path="/dashboard" element={<Layout />} />
       </Routes>
 
       {/* <Background>
