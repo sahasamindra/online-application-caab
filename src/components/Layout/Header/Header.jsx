@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./header.css";
 import Logo from "../../../assets/images/caabLogo.png";
+import Notification from "./Notification/Notification";
+
 //Font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +14,8 @@ import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
-  const title = (
+  const [notificationVisible, setNotificationVisible] = useState(false);
+  const user = (
     <div className="profile-pic-container">
       <div className="profile-pic">
         <img src={Logo} alt="Main Logo" />
@@ -37,14 +40,22 @@ function Header() {
   );
 
   const bell = (
-    <div className="notification">
+    <div
+      className="notification"
+      onClick={() => setNotificationVisible(!notificationVisible)}
+    >
       <FontAwesomeIcon icon={faBell} className="icon-bell" />
       <div className="notification-count">10</div>
+      {notificationVisible && (
+        <div className="notification-container">
+          <Notification />
+        </div>
+      )}
     </div>
   );
 
   return (
-    <Navbar className="navbar-bg" expand="md">
+    <Navbar className="navbar-bg" expand="md" collapseOnSelect>
       <Navbar.Brand href="#">
         <img src={Logo} alt="Main Logo" className="logo" />
         Civil Aviation Authority of Bangladesh
@@ -52,14 +63,11 @@ function Header() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
-          {/* {bell} */}
-          <NavDropdown title={bell} id="basic-nav-dropdown-notification">
-            <NavDropdown.Item href="#">{profile}</NavDropdown.Item>
-            <NavDropdown.Item href="#">{logOut}</NavDropdown.Item>
-          </NavDropdown>
+          {bell}
 
-          <NavDropdown title={title} id="basic-nav-dropdown">
+          <NavDropdown title={user} id="basic-nav-dropdown">
             <NavDropdown.Item href="#">{profile}</NavDropdown.Item>
+            <NavDropdown.Divider />
             <NavDropdown.Item href="#">{logOut}</NavDropdown.Item>
           </NavDropdown>
         </Nav>
