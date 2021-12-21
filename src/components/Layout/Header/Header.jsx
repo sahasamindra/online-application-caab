@@ -9,28 +9,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const title = (
-    <span>
-      <img src={Logo} alt="Main Logo" className="logo" />
-      User Name{" "}
-      <FontAwesomeIcon icon={faChevronDown} style={{ color: "#000" }} />
-    </span>
+    <div className="profile-pic-container">
+      <div className="profile-pic">
+        <img src={Logo} alt="Main Logo" />
+      </div>
+      User Name
+      <FontAwesomeIcon icon={faChevronDown} className="icon-chevron-down" />
+    </div>
   );
 
   const profile = (
-    <span>
-      <FontAwesomeIcon icon={faUserCircle} style={{ color: "#0979F9" }} />
+    <div className="drop-down-menu">
+      <FontAwesomeIcon icon={faUserCircle} className="icon-dropdown" />
       Profile
-    </span>
+    </div>
   );
 
   const logOut = (
-    <span>
-      <FontAwesomeIcon icon={faSignOutAlt} style={{ color: "#0979F9" }} />
+    <div className="drop-down-menu">
+      <FontAwesomeIcon icon={faSignOutAlt} className="icon-dropdown" />
       Logout
-    </span>
+    </div>
+  );
+
+  const bell = (
+    <div className="notification">
+      <FontAwesomeIcon icon={faBell} className="icon-bell" />
+      <div className="notification-count">10</div>
+    </div>
   );
 
   return (
@@ -42,6 +52,12 @@ function Header() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
+          {/* {bell} */}
+          <NavDropdown title={bell} id="basic-nav-dropdown-notification">
+            <NavDropdown.Item href="#">{profile}</NavDropdown.Item>
+            <NavDropdown.Item href="#">{logOut}</NavDropdown.Item>
+          </NavDropdown>
+
           <NavDropdown title={title} id="basic-nav-dropdown">
             <NavDropdown.Item href="#">{profile}</NavDropdown.Item>
             <NavDropdown.Item href="#">{logOut}</NavDropdown.Item>
