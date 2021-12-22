@@ -1,0 +1,51 @@
+.popup-container {
+  margin: 0;
+  padding: 0;
+  height: 105vh;
+  width: 100vw;
+  background-color: rgba(149, 188, 224, 0.21);
+  filter: blur(13px) brightness(110%);
+  -webkit-filter: blur(13px) brightness(110%);
+}
+
+.msg-container {
+  min-width: 15vw;
+  height: auto;
+  /* height: 27vh; */
+  padding: 30px 50px;
+
+  /* min-height: auto;
+  min-width: auto; */
+
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 8px 8px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 38px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.msg-container:hover {
+  cursor: pointer;
+}
+
+.icon-check {
+  color: #59df59;
+  font-size: 5rem;
+}
+
+.font-md {
+  font-family: "PoppinsSemiBold";
+  font-size: 1.5rem;
+}
+
+.blue {
+  color: #0979f9;
+}

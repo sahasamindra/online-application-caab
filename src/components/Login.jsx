@@ -14,9 +14,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import Background from "./Background/Background";
+import Popup from "../components/Popup/Popup";
 
 function Login() {
   const navigate = useNavigate();
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   //Login form values
   const [radioToggle, setRadioToggle] = useState(true);
@@ -37,7 +39,7 @@ function Login() {
     // console.log(radioToggle);
   };
 
-  return (
+  const body = (
     <Background>
       <div className="card-layout">
         <img src={Logo} alt="Main Logo" className="logo" />
@@ -51,11 +53,12 @@ function Login() {
             console.log(email);
             console.log(password);
             console.log(!radioToggle);
-            navigate("/dashboard");
+            setLoginSuccess(true);
+            // navigate("/dashboard");
           }}
         >
           {/* <Row>
-            <Col> */}
+      <Col> */}
           <Form.Group className="mb-3">
             <Form.Label className="fw-bold">
               Email or Mobiles<span className="text-danger">*</span>{" "}
@@ -87,7 +90,7 @@ function Login() {
             </InputGroup>
           </Form.Group>
           {/* </Col>
-          </Row> */}
+    </Row> */}
           <Row className="mb-3 mt-3">
             <Col md={6} className="d-flex">
               <Form.Check
@@ -102,9 +105,9 @@ function Login() {
             </Col>
           </Row>
           {/* <ReCAPTCHA
-                  sitekey="6LejDGcdAAAAAP088vmTvYB_sAM7LB8vDZyHfBjS"
-                  onChange={onChange}
-                /> */}
+            sitekey="6LejDGcdAAAAAP088vmTvYB_sAM7LB8vDZyHfBjS"
+            onChange={onChange}
+          /> */}
           {/* <div className="d-flex justify-content-between mt-3"> */}
           <Row>
             <Col>
@@ -133,6 +136,8 @@ function Login() {
       </div>
     </Background>
   );
+
+  return <> {loginSuccess ? <Popup>{body}</Popup> : <>{body}</>}</>;
 }
 
 export default Login;
