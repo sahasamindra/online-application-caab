@@ -74,6 +74,17 @@
   color: #0979f9;
 }
 
+.dynamic-body {
+  position: absolute;
+  top: calc(8vh + 40px);
+  left: calc(16vw + 20px);
+  height: calc(75vh + 30px);
+  width: calc(84vw - 40px);
+  border: 1px solid green;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
 .footer {
   position: absolute;
   z-index: 1;

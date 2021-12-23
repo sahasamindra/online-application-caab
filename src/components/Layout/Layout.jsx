@@ -25,6 +25,8 @@ function Layout() {
         <Header />
       </div>
 
+      <div className="dynamic-body"></div>
+
       <div className="side-bar">
         <div className="menu">
           <div>
