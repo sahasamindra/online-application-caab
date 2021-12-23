@@ -91,3 +91,29 @@
   color: #1592e6;
   text-decoration: underline;
 }
+
+.welcome {
+  /* border: 1px solid red; */
+  position: fixed;
+  bottom: 90px;
+  width: 16vw;
+  max-width: 267px;
+  min-width: 200px;
+  padding-left: 50px;
+  font-family: "PoppinsSemiBold";
+}
+
+.welcome #welcomeMsg {
+  color: #0979f9;
+}
+
+.welcome #clock {
+  color: #010247;
+  font-size: 0.85rem;
+}
+
+.icon-sun {
+  color: #0979f9;
+  font-size: 3.1rem;
+  margin-bottom: 10px;
+}
