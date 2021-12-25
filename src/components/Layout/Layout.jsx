@@ -25,8 +25,6 @@ function Layout() {
         <Header />
       </div>
 
-      <div className="dynamic-body"></div>
-
       <div className="side-bar">
         <div className="menu">
           <div>
@@ -70,6 +68,10 @@ function Layout() {
             }-${clock.getDate()}-${clock.getFullYear()}`}
           </span>
         </div>
+      </div>
+
+      <div className="body-content">
+        <div className="dynamic-content"></div>
       </div>
 
       <div className="footer">

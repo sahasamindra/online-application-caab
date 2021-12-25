@@ -5,36 +5,25 @@
 }
 
 .header-bar {
-  position: absolute;
+  position: sticky;
   width: 100vw;
   top: 0;
-  left: 0;
   z-index: 3;
-  /* border: 1px solid red; */
 }
 
 .side-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
   z-index: 2;
-  height: 100vh;
+  height: 92vh;
   width: 16vw;
   max-width: 267px;
-  min-width: 200px;
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  /* border: 1px solid red; */
 }
 
 .menu {
-  margin-top: calc(10vh + 15px);
+  padding-top: 15px;
   color: #95bce0;
-  /* border: 1px solid red; */
-}
-
-.active-item {
-  color: #0979f9;
 }
 
 .active-item {
@@ -51,10 +40,6 @@
   padding: 10px 0 10px 50px;
   font-size: 1rem;
   position: relative;
-}
-
-.menu-item:active {
-  color: #0979f9;
 }
 
 .menu-item::before {
@@ -74,21 +59,26 @@
   color: #0979f9;
 }
 
-.dynamic-body {
-  position: absolute;
-  top: calc(8vh + 40px);
-  left: calc(16vw + 20px);
-  height: calc(75vh + 30px);
-  width: calc(84vw - 40px);
-  border: 1px solid green;
+.body-content {
+  height: calc(92vh - 2.4rem - 40px);
+  width: calc(84vw - 1.2rem);
+  margin-top: 1.2rem;
+  margin-left: calc(16vw + 1.2rem);
+  overflow: auto;
+}
+
+.dynamic-content {
+  height: calc(92vh - 2.4rem - 40px);
+  width: calc(84vw - 2.4rem);
+  background-color: #fff;
   border-radius: 10px;
-  overflow-y: scroll;
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   bottom: 0;
+  height: 40px;
   width: 100%;
   background-color: #fff;
   text-align: right;
@@ -106,10 +96,10 @@
 .welcome {
   /* border: 1px solid red; */
   position: fixed;
-  bottom: 90px;
+  bottom: 80px;
   width: 16vw;
   max-width: 267px;
-  min-width: 200px;
+  /* min-width: 200px; */
   padding-left: 50px;
   font-family: "PoppinsSemiBold";
 }
@@ -128,3 +118,24 @@
   font-size: 3.1rem;
   margin-bottom: 10px;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(11, 2, 51);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+} */
