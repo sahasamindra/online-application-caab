@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   height: 105vh;
-  width: 100vw;
+  width: 99vw;
   background-color: rgba(149, 188, 224, 0.21);
   filter: blur(13px) brightness(110%);
   -webkit-filter: blur(13px) brightness(110%);

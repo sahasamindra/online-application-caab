@@ -38,7 +38,7 @@
   /* border: 1px solid red; */
   font-family: "PoppinsSemiBold";
   padding: 10px 0 10px 50px;
-  font-size: 1rem;
+  font-size: 1.1vw;
   position: relative;
 }
 
@@ -60,18 +60,26 @@
 }
 
 .body-content {
-  height: calc(92vh - 2.4rem - 40px);
-  width: calc(84vw - 1.2rem);
-  margin-top: 1.2rem;
-  margin-left: calc(16vw + 1.2rem);
+  height: calc(92vh - 40px);
+  /* height: calc(92vh - 2.4rem - 40px); */
+  width: calc(84vw - 1.5rem);
+  /* margin-top: 1.2rem; */
+  margin-left: calc(16vw + 1.5rem);
   overflow: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgb(11, 2, 51) #f9fbfd;
+
+  /* border: 1px solid red; */
 }
 
 .dynamic-content {
-  height: calc(92vh - 2.4rem - 40px);
-  width: calc(84vw - 2.4rem);
+  height: calc(92vh - 3rem - 40px);
+  /* height: 100vh; */
+  width: calc(84vw - 3rem);
   background-color: #fff;
   border-radius: 10px;
+  margin: 1.5rem 0;
 }
 
 .footer {
@@ -121,18 +129,18 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(11, 2, 51);
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 /* Handle on hover */
