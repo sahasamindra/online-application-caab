@@ -110,6 +110,7 @@
   /* min-width: 200px; */
   padding-left: 50px;
   font-family: "PoppinsSemiBold";
+  font-size: 1.3vw;
 }
 
 .welcome #welcomeMsg {
@@ -118,12 +119,12 @@
 
 .welcome #clock {
   color: #010247;
-  font-size: 0.85rem;
+  font-size: 0.83vw;
 }
 
 .icon-sun {
   color: #0979f9;
-  font-size: 3.1rem;
+  font-size: 3.1vw;
   margin-bottom: 10px;
 }
 
