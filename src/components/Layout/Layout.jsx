@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Header from "./Header/Header";
 import "./layout.css";
+import Logo from "../../assets/images/caabLogo.png";
 
-//Font awesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun } from "@fortawesome/free-solid-svg-icons";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
+//progress bar
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+
+import SideBar from "./SideBar/SideBar";
 
 function Layout() {
-  let menus = ["Home", "New Application", "Settings"];
-  const [active, setActive] = useState(0);
-  const [clock, setClock] = useState(new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => setClock(new Date()), 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
+  const percentage = 25;
   return (
     <div className="global">
       <div className="header-bar">
@@ -26,52 +18,72 @@ function Layout() {
       </div>
 
       <div className="side-bar">
-        <div className="menu">
-          <div>
-            {menus.map((item, index) => (
-              <div
-                className={`menu-item ${
-                  active === index ? "active-item" : null
-                }`}
-                key={index}
-                onClick={() => setActive(index)}
-              >
-                {item}
-              </div>
-            ))}
-
-            {/* <div className="menu-item">Home</div>
-            <div className="menu-item">New Application</div>
-            <div className="menu-item">Settings</div> */}
-          </div>
-        </div>
-        <div className="welcome">
-          {clock.getHours() < 18 ? (
-            <FontAwesomeIcon icon={faSun} className="icon-sun" />
-          ) : (
-            <FontAwesomeIcon icon={faMoon} className="icon-sun" />
-          )}
-          <br />
-          <span id="welcomeMsg">
-            Good{" "}
-            {clock.getHours() < 12
-              ? "Morning"
-              : clock.getHours() < 18
-              ? "Afternoon"
-              : "Evening"}
-          </span>
-          <br />
-          <span id="clock">
-            {clock.toLocaleTimeString()} |{" "}
-            {`${
-              clock.getMonth() + 1
-            }-${clock.getDate()}-${clock.getFullYear()}`}
-          </span>
-        </div>
+        <SideBar />
       </div>
 
       <div className="body-content">
-        <div className="dynamic-content"></div>
+        <div className="dynamic-content">
+          <div className="profile">
+            <div className="user-profile">
+              <div className="profile-pic">
+                <img src={Logo} alt="Main Logo" />
+              </div>
+              <div className="profile-description">
+                <div className="profile-welcome">Welcome</div>
+                <div className="profile-name">K. M. Safwan Hassan Rubabp</div>
+                <div className="profile-designation">
+                  Senior Pilot, Bangladesh Biman
+                </div>
+              </div>
+            </div>
+            <div className="user-profile-complete">
+              <div className="progress-circle">
+                <CircularProgressbar
+                  value={percentage}
+                  styles={buildStyles({
+                    pathColor: "#3DC31C",
+                    trailColor: "#E9F4FF",
+                  })}
+                />
+                <div className="percentage">
+                  {percentage}% <span>Completed</span>
+                </div>
+              </div>
+              <div className="profile-name">Complete Your Profile</div>
+              <div className="profile-designation">
+                To successfully register your profile as an expert and to be
+                available in the search results.
+              </div>
+            </div>
+
+            <div className="user-gsat">
+              <div className="progress-circle">
+                <CircularProgressbar
+                  value={percentage}
+                  styles={buildStyles({
+                    pathColor: "#FF9F31",
+                    trailColor: "#E9F4FF",
+                  })}
+                />
+                <div className="percentage">
+                  {percentage}
+                  <div className="days">Days</div>{" "}
+                  <div className="remaining">Remaining</div>
+                </div>
+              </div>
+
+              <div className="profile-gsat">
+                General Security Assessment Training (GSAT)
+              </div>
+              <div className="profile-designation">
+                Issue Date: 02-05-2021 <br />
+                Expire Date: 27-05-2021
+              </div>
+            </div>
+          </div>
+
+          <div className="history"></div>
+        </div>
       </div>
 
       <div className="footer">

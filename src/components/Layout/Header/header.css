@@ -18,7 +18,7 @@
 
 .navbar-light .navbar-brand {
   color: #010247 !important;
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   /* font-size: 1.2em; */
 }
 
@@ -85,7 +85,7 @@
   padding: 5px;
   min-height: 60px;
   font-family: "PoppinsMedium";
-  font-size: 1.2vw;
+  font-size: 1vw;
   /* border: 1px solid red; */
   padding-left: 20px;
   border-left: 1px solid #e9e9e9;
@@ -102,7 +102,7 @@
   align-items: center;
   justify-content: center;
   /* position: relative; */
-  padding: 2px;
+  padding: 4px;
   overflow: hidden;
   border: 3px solid #f9fbfd;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.11);
@@ -129,7 +129,7 @@
 
 .drop-down-menu {
   font-family: "PoppinsMedium";
-  font-size: 1.2vw;
+  font-size: 1vw;
   height: 4vh;
   min-height: 40px;
   display: flex;

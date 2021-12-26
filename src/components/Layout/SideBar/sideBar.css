@@ -1,0 +1,86 @@
+.menu {
+  padding-top: 15px;
+  color: #95bce0;
+}
+
+.active-item {
+  color: #0979f9;
+}
+
+.active-item::before {
+  background-color: #0979f9;
+}
+
+.menu-item {
+  /* border: 1px solid red; */
+  font-family: "PoppinsSemiBold";
+  padding: 10px 0 10px 3vw;
+  font-size: 1vw;
+  position: relative;
+}
+
+.menu-item::before {
+  content: "";
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu-item:hover::before {
+  background-color: #0979f9;
+}
+
+.menu-item:hover {
+  color: #0979f9;
+}
+
+.welcome {
+  /* border: 1px solid red; */
+  position: fixed;
+  bottom: 80px;
+  width: 16vw;
+  /* max-width: 267px; */
+  /* min-width: 200px; */
+  /* padding-left: 50px; */
+  padding-left: 3vw;
+  font-family: "PoppinsSemiBold";
+  font-size: 1vw;
+}
+
+.welcome #welcomeMsg {
+  color: #0979f9;
+}
+
+.welcome #clock {
+  color: #010247;
+  font-size: 0.8vw;
+}
+
+.icon-sun {
+  color: #0979f9;
+  font-size: 3.1vw;
+  margin-bottom: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(11, 2, 51);
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+  } */
