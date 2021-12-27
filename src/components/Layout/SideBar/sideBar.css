@@ -7,7 +7,7 @@
   color: #0979f9;
 }
 
-.active-item::before {
+.active-item::after {
   background-color: #0979f9;
 }
 
@@ -19,18 +19,18 @@
   position: relative;
 }
 
-.menu-item::before {
+.menu-item::after {
   content: "";
   width: 5px;
   height: 100%;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
 }
 
-.menu-item:hover::before {
+/* .menu-item:hover::after {
   background-color: #0979f9;
-}
+} */
 
 .menu-item:hover {
   color: #0979f9;
