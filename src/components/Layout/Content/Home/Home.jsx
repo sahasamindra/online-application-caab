@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
 import Logo from "../../../../assets/images/caabLogo.png";
 import Table from "react-bootstrap/Table";
@@ -16,7 +16,11 @@ import { faPrint } from "@fortawesome/free-solid-svg-icons";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
-  const percentage = 25;
+  const [percentage, setPercentage] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => setPercentage(25), 500);
+  }, [percentage]);
 
   const sortingIcon = (
     <div className="table-header-icon-container">
