@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./sideBar.css";
+import { useNavigate } from "react-router-dom";
 
 //Font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +8,12 @@ import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 
 function SideBar() {
-  let menus = ["Home", "New Application", "Settings"];
+  const navigate = useNavigate();
+  let menus = [
+    { title: "Home", path: "home" },
+    { title: "New Application", path: "newApplication" },
+    { title: "Settings", path: "settings" },
+  ];
   const [active, setActive] = useState(0);
   const [clock, setClock] = useState(new Date());
 
@@ -25,9 +31,12 @@ function SideBar() {
             <div
               className={`menu-item ${active === index ? "active-item" : null}`}
               key={index}
-              onClick={() => setActive(index)}
+              onClick={() => {
+                setActive(index);
+                navigate(item.path);
+              }}
             >
-              {item}
+              {item.title}
             </div>
           ))}
 

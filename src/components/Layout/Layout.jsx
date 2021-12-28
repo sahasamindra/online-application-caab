@@ -2,7 +2,8 @@ import React from "react";
 import Header from "./Header/Header";
 import SideBar from "./SideBar/SideBar";
 import "./layout.css";
-import Home from "./Content/Home/Home";
+// import Home from "./Content/Home/Home";
+import { Outlet } from "react-router-dom";
 
 function Layout() {
   return (
@@ -17,7 +18,7 @@ function Layout() {
 
       <div className="body-content">
         <div className="dynamic-content">
-          <Home />
+          <Outlet />
         </div>
       </div>
 

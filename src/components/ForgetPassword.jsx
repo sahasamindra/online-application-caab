@@ -37,7 +37,8 @@ function ForgetPassword() {
               className="col-12 fw-bold mt-3"
               variant="primary"
               type="button"
-              onClick={() => navigate("/")}
+              onClick={() => navigate(-1)}
+              // onClick={() => navigate("/")}
             >
               Login
             </Button>
