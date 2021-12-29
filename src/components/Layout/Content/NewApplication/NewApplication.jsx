@@ -2,7 +2,7 @@ import React from "react";
 import "./newApplication.css";
 
 function NewApplication() {
-  return <div className="test">New Application</div>;
+  return <div className="content-adjuster"> test</div>;
 }
 
 export default NewApplication;

@@ -38,13 +38,14 @@
 
 .dynamic-content {
   /* height: calc(92vh - 3rem - 40px); */
-  height: 78vh;
+  height: 83vh;
   width: calc(84vw - 2.5rem);
   background-color: #fff;
   border-radius: 10px;
   margin: 1vw 0;
-  /* border: 1px solid red; */
-  background-color: transparent;
+  border: 1px solid #edf2f9;
+  box-shadow: 18px 38px 63px rgba(230, 242, 255, 0.47);
+  /* background-color: transparent; */
 }
 
 .footer {
